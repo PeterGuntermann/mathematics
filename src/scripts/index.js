@@ -1,4 +1,5 @@
 import '../styles/index.scss';
 import 'bootstrap';
+import { drawLineChart } from "./line-chart";
 
-console.log('webpack starterkit');
+drawLineChart();
