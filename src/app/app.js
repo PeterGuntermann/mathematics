@@ -9,5 +9,14 @@ export default class App {
         cartoonist.drawDummyLineChart();
         cartoonist.draw(x => x ^ 2, 10);
 
+        /*
+            TODO: 
+            - visualization of the condition of a matrix (using the unit circle)
+            - navigation using a bootstrap panel
+            - numerically integrate using quadrature formulas, visualize and compare the values
+            - solve linear equation systems
+            - solve ordinary differential equations
+        */
+
     }
 } 

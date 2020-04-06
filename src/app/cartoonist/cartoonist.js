@@ -20,4 +20,9 @@ export class Cartoonist {
         console.log(interval);
     };
 
+    // TODO: extract a class Interval
+    // TODO: calculate more general intervals
+    // TODO: let the draw() function actually "draw" something with ChartJS
+    // TODO: draw multiple graphs into the same canvas
+
 }
