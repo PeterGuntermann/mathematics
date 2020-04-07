@@ -1,5 +1,6 @@
-import Chart from 'chart.js';
+import { Interval } from '../interval';
 import { lineChartDummyOptions } from './dummy-charts';
+import Chart from 'chart.js';
 
 /// Draws graphs of mathematical functions in the interval [0,1)
 export class Cartoonist {
@@ -13,16 +14,13 @@ export class Cartoonist {
     }
 
     draw(functionToDraw, numPoints) {
-        const interval = [];
-        for (let i = 0; i < numPoints; ++i) {
-            interval.push(i / (numPoints - 1));
-        }
+        const interval = new Interval(0, 1).asArray(numPoints);
         console.log(interval);
     };
 
-    // TODO: extract a class Interval
     // TODO: calculate more general intervals
     // TODO: let the draw() function actually "draw" something with ChartJS
     // TODO: draw multiple graphs into the same canvas
 
 }
+
