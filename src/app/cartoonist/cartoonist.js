@@ -9,17 +9,23 @@ export class Cartoonist {
         this.ctx = document.getElementById(elementId).getContext('2d');
     }
 
-    drawDummyLineChart() {
-        const chart = new Chart(this.ctx, lineChartDummyOptions);
-    }
-
-    draw(functionToDraw, numPoints) {
-        const interval = new Interval(0, 1).asArray(numPoints);
-        console.log(interval);
+    draw(f, numPoints) {
+        const xAxis = new Interval(0, 1).asArray(numPoints);
+        const yAxis = xAxis.map(x => f(x));
+        console.log(xAxis);
+        console.log(yAxis);
+        const _ = new Chart(this.ctx, {
+            type: "line",
+            data: {
+                labels: xAxis,
+                datasets: [
+                    { data: yAxis, lineTension: 0 }
+                ]
+            },
+            options: {}
+        });
     };
-
-    // TODO: calculate more general intervals
-    // TODO: let the draw() function actually "draw" something with ChartJS
+    
     // TODO: draw multiple graphs into the same canvas
 
 }

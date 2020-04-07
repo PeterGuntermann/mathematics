@@ -6,8 +6,7 @@ export default class App {
 
         const cartoonist = new Cartoonist();
         cartoonist.setContext2d('line-chart');
-        cartoonist.drawDummyLineChart();
-        cartoonist.draw(x => x ^ 2, 10);
+        cartoonist.draw(x => x * x, 10);
 
         /*
             TODO: 
