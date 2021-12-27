@@ -34,10 +34,10 @@ module.exports = merge(common, {
         include: Path.resolve(__dirname, '../src'),
         loader: 'babel-loader'
       },
-      // {
-      //   test: /\.s?css$/i,
-      //   use: ['style-loader', 'css-loader?sourceMap=true', 'sass-loader']
-      // },
+      {
+        test: /\.s?css$/i,
+        use: ['style-loader', 'css-loader?sourceMap=true', 'sass-loader']
+      },
       {
         test: /\.(scss)$/,
         use: [{
