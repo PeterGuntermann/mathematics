@@ -1,12 +1,11 @@
 export class IntegerNumber {
-  constructor(public value: number, public primeDecomposition: number[] = []) {
-  }
+    constructor(public value: number, public primeDecomposition: number[] = []) {}
 
-  printPrimeDecomposition(): string {
-    if (this.primeDecomposition.length < 1) {
-      return "";
+    printPrimeDecomposition(): string {
+        if (this.primeDecomposition.length < 1) {
+            return "";
+        }
+
+        return this.primeDecomposition.map((prime) => `${prime}`).join(" * ");
     }
-
-    return this.primeDecomposition.map(prime => `${prime}`).join(" * ")
-  }
 }

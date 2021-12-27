@@ -1,5 +1,7 @@
 <h1>Prime numbers</h1>
 
 <section>
-  <div *ngFor="let num of numbers">{{ num.value }} = {{num.printPrimeDecomposition()}}</div>
+    <div *ngFor="let num of numbers">
+        {{ num.value }} = {{ num.printPrimeDecomposition() }}
+    </div>
 </section>
