@@ -17,11 +17,8 @@ export class AppComponent implements OnInit {
     }
 
     private calculateNumbers() {
-        this.numbers.push(this.primeService.getNumberWithDecomposition(2));
-        this.numbers.push(this.primeService.getNumberWithDecomposition(3));
-        this.numbers.push(this.primeService.getNumberWithDecomposition(4));
-        this.numbers.push(this.primeService.getNumberWithDecomposition(5));
-        this.numbers.push(this.primeService.getNumberWithDecomposition(6));
-        this.numbers.push(this.primeService.getNumberWithDecomposition(7));
+        for (let i = 2; i < 100; i++) {
+            this.numbers.push(this.primeService.getNumberWithDecomposition(i));
+        }
     }
 }

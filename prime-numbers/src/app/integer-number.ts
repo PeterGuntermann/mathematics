@@ -6,6 +6,6 @@ export class IntegerNumber {
             return "";
         }
 
-        return this.primeDecomposition.map((prime) => `${prime}`).join(" * ");
+        return this.primeDecomposition.map((prime) => `${prime}`).join(" ⋅ ");
     }
 }
