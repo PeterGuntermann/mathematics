@@ -14,14 +14,25 @@ describe("PrimeService", () => {
     });
 
     describe("calculatePrimeDecomposition", () => {
-        it("should decompose 3", () => {});
+        it("should decompose primes", () => {
+            expect(service.calculatePrimeDecomposition(2)).toEqual([2]);
+            expect(service.calculatePrimeDecomposition(3)).toEqual([3]);
+            expect(service.calculatePrimeDecomposition(5)).toEqual([5]);
+            expect(service.calculatePrimeDecomposition(7)).toEqual([7]);
+            expect(service.calculatePrimeDecomposition(11)).toEqual([11]);
+        });
 
-        it("should decompose 4", () => {});
+        it("should decompose into two prime factors", () => {
+            expect(service.calculatePrimeDecomposition(4)).toEqual([2, 2]);
+            expect(service.calculatePrimeDecomposition(6)).toEqual([2, 3]);
+            expect(service.calculatePrimeDecomposition(9)).toEqual([3, 3]);
+        });
 
-        it("should decompose 6", () => {});
-
-        it("should decompose 12", () => {});
-
-        it("should decompose 420", () => {});
+        it("should decompose into several prime factors", () => {
+            expect(service.calculatePrimeDecomposition(12)).toEqual([2, 2, 3]);
+            expect(service.calculatePrimeDecomposition(16)).toEqual([2, 2, 2, 2]);
+            expect(service.calculatePrimeDecomposition(90)).toEqual([2, 3, 3, 5]);
+            expect(service.calculatePrimeDecomposition(420)).toEqual([2, 2, 3, 5, 7]);
+        });
     });
 });
