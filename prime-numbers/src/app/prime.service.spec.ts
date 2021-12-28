@@ -13,6 +13,13 @@ describe("PrimeService", () => {
         expect(service).toBeTruthy();
     });
 
+    describe("initPrimes", () => {
+        it("should calculate correct prime numbers", () => {
+            service.initPrimes(30);
+            expect(service.primes).toEqual([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
+        });
+    });
+
     describe("calculatePrimeDecomposition", () => {
         it("should decompose primes", () => {
             expect(service.calculatePrimeDecomposition(2)).toEqual([2]);

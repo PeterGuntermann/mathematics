@@ -1,12 +1,16 @@
 import { Injectable } from "@angular/core";
+import { NUMBERS_TO_SHOW } from "./constants";
 import { IntegerNumber } from "./integer-number";
 
 @Injectable({
     providedIn: "root",
 })
 export class PrimeService {
-    // TODO: 27.12.2021 Calculate primes in a dynamic and smoart way ;)
-    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+    primes: number[];
+
+    constructor() {
+        this.initPrimes(NUMBERS_TO_SHOW);
+    }
 
     getNumberWithDecomposition(num): IntegerNumber {
         const result = this.calculatePrimeDecomposition(num);
@@ -27,5 +31,15 @@ export class PrimeService {
         }
 
         return result;
+    }
+
+    initPrimes(max: number = NUMBERS_TO_SHOW) {
+        this.primes = [];
+
+        for (let candidate = 2; candidate < max; candidate++) {
+            const hasDivisor = this.primes.some((prime) => candidate % prime === 0);
+            if (hasDivisor) continue;
+            this.primes.push(candidate);
+        }
     }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { NUMBERS_TO_SHOW } from "./constants";
 import { IntegerNumber } from "./integer-number";
 import { PrimeService } from "./prime.service";
 
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
     }
 
     private calculateNumbers() {
-        for (let i = 2; i < 100; i++) {
+        for (let i = 2; i < NUMBERS_TO_SHOW; i++) {
             this.numbers.push(this.primeService.getNumberWithDecomposition(i));
         }
     }
