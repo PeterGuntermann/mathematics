@@ -1,6 +1,6 @@
 :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
     color: #333;
     box-sizing: border-box;
@@ -10,4 +10,9 @@
 
 section {
     column-count: 5;
+
+}
+
+.is-prime {
+    background-color: hsl(0deg 100% 75%);
 }
