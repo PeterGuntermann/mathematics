@@ -13,7 +13,6 @@ export class PrimeService {
         return new IntegerNumber(num, result);
     }
 
-    // TODO: 27.12.2021 Implement with TDD
     calculatePrimeDecomposition(num): number[] {
         const result = [];
 
@@ -21,7 +20,12 @@ export class PrimeService {
             return [num];
         }
 
-        // TODO: 27.12.2021 Calculate decomposition for non-primes (recursively)
+        for (let prime of this.primes) {
+            if (num % prime === 0) {
+                return [prime, ...this.calculatePrimeDecomposition(num / prime)];
+            }
+        }
+
         return result;
     }
 }
